@@ -6,7 +6,7 @@
   </PropertyGroup>
   <Import Project="$(VSToolsPath)\DotNet\Microsoft.DotNet.Props" Condition="'$(VSToolsPath)' != ''" />
   <PropertyGroup Label="Globals">
-    <ProjectGuid>80c38159-f187-4e05-b2fb-5cfdcfda6039</ProjectGuid>
+    <ProjectGuid>8b06292d-f530-4c74-9ddb-5f97a3fa529d</ProjectGuid>
     <RootNamespace>RomaPrepod.WebApi</RootNamespace>
     <BaseIntermediateOutputPath Condition="'$(BaseIntermediateOutputPath)'=='' ">.\obj</BaseIntermediateOutputPath>
     <OutputPath Condition="'$(OutputPath)'=='' ">.\bin\</OutputPath>
