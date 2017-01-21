@@ -6,9 +6,19 @@ namespace RomaPrepod.WebApi.Controllers
 	public class RomaController : Controller
 	{
 		[HttpGet]
-		public IActionResult Get()
+		public Roma Get()
 		{
-			return Ok(new { name = "Рома", occupation = "препод"});
+			return new Roma
+			{
+				Name = "Рома",
+				Occupation = "препод"
+			};
 		}
+	}
+
+	public class Roma
+	{
+		public string Name { get; set; }
+		public string Occupation { get; set; }
 	}
 }
