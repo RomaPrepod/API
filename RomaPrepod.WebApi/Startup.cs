@@ -43,6 +43,11 @@ namespace RomaPrepod.WebApi
 			loggerFactory.AddConsole(Configuration.GetSection("Logging"));
 			loggerFactory.AddDebug();
 
+			if (env.IsDevelopment())
+			{
+				app.UseDeveloperExceptionPage();
+			}
+
 			app.Use(async (context, next) =>
 			{
 				await next();
