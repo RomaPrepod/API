@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Microsoft.IdentityModel.Tokens;
 
 namespace RomaPrepod.WebApi
 {
@@ -42,6 +43,13 @@ namespace RomaPrepod.WebApi
 		{
 			loggerFactory.AddConsole(Configuration.GetSection("Logging"));
 			loggerFactory.AddDebug();
+
+			var options = new JwtBearerOptions
+			{
+				Audience = "nxAevacov09GE08xDjwN4OjJZs57MaWU",
+				Authority = "https://romaprepod.eu.auth0.com/"
+			};
+			app.UseJwtBearerAuthentication(options);
 
 			if (env.IsDevelopment())
 			{
