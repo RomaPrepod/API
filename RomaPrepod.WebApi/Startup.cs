@@ -27,6 +27,7 @@ namespace RomaPrepod.WebApi
 			var builder = new ConfigurationBuilder()
 				.SetBasePath(env.ContentRootPath)
 				.AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+				.AddJsonFile("authsettings.json", optional: true, reloadOnChange: true)
 				.AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
 				.AddEnvironmentVariables();
 			Configuration = builder.Build();
@@ -46,9 +47,17 @@ namespace RomaPrepod.WebApi
 
 			var options = new JwtBearerOptions
 			{
-				Audience = "nxAevacov09GE08xDjwN4OjJZs57MaWU",
-				Authority = "https://romaprepod.eu.auth0.com/"
+				Audience = Configuration["audience"],
+				Authority = Configuration["authority"],
+				TokenValidationParameters = new TokenValidationParameters
+				{
+					ValidAudiences = new[]
+					{
+						Configuration["validAudiences:webClient"]
+					}
+				}
 			};
+
 			app.UseJwtBearerAuthentication(options);
 
 			if (env.IsDevelopment())
