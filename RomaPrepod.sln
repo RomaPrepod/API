@@ -3,15 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "global", "global", "{0C89537F-9DDC-4554-9F85-38BCD22F24B2}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{0C89537F-9DDC-4554-9F85-38BCD22F24B2}"
 	ProjectSection(SolutionItems) = preProject
 		.editorconfig = .editorconfig
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "RomaPrepod.Core", "RomaPrepod.Core\RomaPrepod.Core.xproj", "{478FC5E4-EC66-40F7-9B2C-FFD053D5FFC9}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "RomaPrepod.Core", "src\RomaPrepod.Core\RomaPrepod.Core.xproj", "{478FC5E4-EC66-40F7-9B2C-FFD053D5FFC9}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "RomaPrepod.WebApi", "RomaPrepod.WebApi\RomaPrepod.WebApi.xproj", "{8B06292D-F530-4C74-9DDB-5F97A3FA529D}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "RomaPrepod.WebApi", "src\RomaPrepod.WebApi\RomaPrepod.WebApi.xproj", "{8B06292D-F530-4C74-9DDB-5F97A3FA529D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
