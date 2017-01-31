@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Linq;
-using System.Net;
 using System.Text;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -42,6 +40,16 @@ namespace RomaPrepod.WebApi
 			services.Configure<GitHubAuthSettings>(Configuration.GetSection(nameof(GitHubAuthSettings)));
 			services.AddTransient<GitHubAuthProvider>();
 
+			services.AddCors(options =>
+			{
+				options.AddPolicy("Default", builder =>
+				{
+					builder
+						.WithOrigins("http://localhost:4200")
+						.AllowAnyMethod()
+						.Build();
+				});
+			});
 			services.AddMvc();
 		}
 
@@ -74,6 +82,8 @@ namespace RomaPrepod.WebApi
 			{
 				app.UseDeveloperExceptionPage();
 			}
+
+			app.UseCors("Default");
 
 			app.UseMvc(routes =>
 			{
