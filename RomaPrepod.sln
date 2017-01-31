@@ -9,7 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		global.json = global.json
 	EndProjectSection
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "src\RomaPrepod.WebApi", "src\RomaPrepod.WebApi\RomaPrepod.WebApi.xproj", "{8B06292D-F530-4C74-9DDB-5F97A3FA529D}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "RomaPrepod.WebApi", "src\RomaPrepod.WebApi\RomaPrepod.WebApi.xproj", "{8B06292D-F530-4C74-9DDB-5F97A3FA529D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{879C1016-320A-4923-90C4-BC5B419A68EE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,5 +26,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8B06292D-F530-4C74-9DDB-5F97A3FA529D} = {879C1016-320A-4923-90C4-BC5B419A68EE}
 	EndGlobalSection
 EndGlobal
