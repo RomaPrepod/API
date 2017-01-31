@@ -17,16 +17,6 @@ namespace RomaPrepod.WebApi
 		private const string SecretKey = "needtogetthisfromenvironment";
 		private readonly SymmetricSecurityKey _signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(SecretKey));
 
-		private const string IndexPath = "/index.html";
-
-		private readonly string[] _angularRoutes =
-		{
-			"lectures",
-			"labs",
-			"tests",
-			"results"
-		};
-
 		public Startup(IHostingEnvironment env)
 		{
 			var builder = new ConfigurationBuilder()
@@ -85,20 +75,6 @@ namespace RomaPrepod.WebApi
 				app.UseDeveloperExceptionPage();
 			}
 
-			app.Use(async (context, next) =>
-			{
-				await next();
-
-				if (context.Response.StatusCode == (int)HttpStatusCode.NotFound &&
-					_angularRoutes.Any(route => context.Request.Path.Value.StartsWith("/"+route, StringComparison.OrdinalIgnoreCase)))
-				{
-					context.Request.Path = IndexPath;
-					await next();
-				}
-			});
-
-			app.UseDefaultFiles();
-			app.UseStaticFiles();
 			app.UseMvc(routes =>
 			{
 				routes.MapRoute(
